@@ -2,31 +2,27 @@ package com.regex.model.entity;
 
 public enum NoteBase {
     FIRST("Max","maxS2910"),SECOND("John","649NewZe"),THIRD("Тарас","тарас1234");
-    private  String name;
-    private  String login;
-    NoteBase(String name, String login)
+    private  String nameFirst;
+    private  String loginUnique;
+    NoteBase(String name, String loginUnique)
     {
-        this.name = name;
-        this.login = login;
+        this.nameFirst = name;
+        this.loginUnique = loginUnique;
     }
 
-    public static boolean CheckLogin(String login)
+    public static boolean checkLogin(String login)
     {
-        boolean result=false;
         for(NoteBase note:NoteBase.values())
-        {if(note.getLogin().equals(login))
         {
-            result=true;
+            if(note.getLoginUnique().equals(login))return true;
         }
-
-        }
-        return  result;
+        return false;
     }
-    public String getName() {
-        return name;
+    public String getNameFirst() {
+        return nameFirst;
     }
-    public String getLogin() {
-        return login;
+    public String getLoginUnique() {
+        return loginUnique;
     }
 
 }

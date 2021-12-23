@@ -1,4 +1,4 @@
-package com.regex.controller;
+package com.regex.vie;
 public interface Container {
     String INPUT_STRING_DATA = "input.string.data";
     String FIRST_NAME = "input.first.name.data";

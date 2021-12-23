@@ -1,9 +1,12 @@
 package com.regex.vie;
-import com.regex.controller.Container;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-public class View implements Container {
+
+import static com.regex.vie.Container.INPUT_STRING_DATA;
+import  static com.regex.vie.Container.WRONG_INPUT_DATA;
+
+public class View  {
 
     public void printMessage (String message){
         System.out.println(message);
@@ -11,8 +14,9 @@ public class View implements Container {
     static String BANDLE_MESSAGES_NAME="message";
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(
-                    BANDLE_MESSAGES_NAME, new Locale("ua", "UA"));
-    // new Locale("en"));
+                    BANDLE_MESSAGES_NAME,
+                    //new Locale("ua", "UA"));
+     new Locale("en"));
     public String concatenationString (String... message){
         StringBuilder concatString = new StringBuilder();
         for (String v : message){
